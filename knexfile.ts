@@ -1,9 +1,8 @@
 import { config } from "dotenv";
-import { Knex } from "knex";
 
 config({ path: `.env.development` });
 
-const knexConfig: { [key: string]: Knex.Config } = {
+const knexConfig = {
   development: {
     client: "pg",
     connection: {
