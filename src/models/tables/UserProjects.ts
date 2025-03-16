@@ -1,4 +1,4 @@
-import { dbConfig } from "../../config/knex";
+import { dbConfig } from '../../config/knex';
 
 export type UserProject = {
   userId: number;
@@ -14,7 +14,7 @@ class UserProjectModel {
   private readonly db: any;
 
   constructor() {
-    this.tableName = "user_projects";
+    this.tableName = 'user_projects';
     this.db = dbConfig;
   }
 
@@ -26,9 +26,9 @@ class UserProjectModel {
       userProject.updatedAt = new Date().toISOString();
       return await this.db(this.tableName)
         .insert(userProject)
-        .onConflict("id")
+        .onConflict('id')
         .merge()
-        .returning("*");
+        .returning('*');
     } catch (err) {
       console.log(err);
       throw err;

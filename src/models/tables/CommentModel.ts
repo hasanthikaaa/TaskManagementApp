@@ -1,4 +1,4 @@
-import { dbConfig } from "../../config/knex";
+import { dbConfig } from '../../config/knex';
 
 export type Comment = {
   content: string;
@@ -13,7 +13,7 @@ class CommentModel {
   private readonly db: any;
 
   constructor() {
-    this.tableName = "comments";
+    this.tableName = 'comments';
     this.db = dbConfig;
   }
 
@@ -23,9 +23,9 @@ class CommentModel {
       comment.updatedAt = new Date().toISOString();
       return await this.db(this.tableName)
         .insert(comment)
-        .onConflict("id")
+        .onConflict('id')
         .merge()
-        .returning("*");
+        .returning('*');
     } catch (err) {
       console.log(err);
       throw err;
