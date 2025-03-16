@@ -37,6 +37,7 @@ class ProjectService {
   public async deleteAProject(projectId: number): Promise<DbProject> {
     try {
       const tasks = await TaskService.getProjectTasks(projectId);
+      // delete all related tasks before deleting the project
       if (tasks && tasks.length > 0) {
         await Promise.all(
           tasks.map(async (task) => {

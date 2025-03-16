@@ -36,7 +36,7 @@ class ProjectController {
       const projectId = req.params.id;
       console.log({ projectId });
 
-      const project = await ProjectService.deleteAProject(Number(projectId));
+      await ProjectService.deleteAProject(Number(projectId));
       return res.status(200).json("Deleted successfully");
     } catch (err) {
       return res.status(400).send("Error retrieving project");
