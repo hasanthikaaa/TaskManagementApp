@@ -4,8 +4,14 @@ meta {
   seq: 9
 }
 
-delete {
-  url: {{baseUrl}}/task/1
+patch {
+  url: {{baseUrl}}/task/5
   body: json
   auth: none
+}
+
+body:json {
+  {
+    "status": "done"
+  }
 }
