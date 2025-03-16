@@ -15,6 +15,7 @@ Ensure you have the following installed:
 1. **Clone the Repository**
     ```bash
     git clone https://github.com/hasanthikaaa/TaskManagementApp.git
+    cd TaskManagementApp
     ```
 
 2. **Install Dependencies**
@@ -28,7 +29,7 @@ Ensure you have the following installed:
     ```
 
 4. **Configure Environment Variables**
-   Create a `.env` file in the root directory and provide the necessary environment variables:
+   Create a `.env.development` file in the root directory and provide the necessary environment variables:
     ```env
    PORT=
    NODE_ENV=
@@ -65,10 +66,10 @@ This will apply all the pending migrations in the migrations folder to your deve
 
 ### 2. Seed the database
 ```bash
-   knex seed:run --specific=user.ts
+   knex seed:run --specific=users.ts
 ```
 ```bash
-   knex seed:run --specific=project.ts
+   knex seed:run --specific=projects.ts
 ```
 ```bash
    knex seed:run --specific=user_projects.ts
