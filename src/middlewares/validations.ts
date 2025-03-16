@@ -9,6 +9,11 @@ export const userCreationValidation = [
     .withMessage("Email is required and should be valid"),
 ];
 
+export const projectCreationValidation = [
+  body("name").notEmpty().withMessage("Name is required"),
+  body("description").notEmpty().withMessage("Description is required"),
+];
+
 export const handlerErrorValidation = (
   req: Request,
   res: Response,
