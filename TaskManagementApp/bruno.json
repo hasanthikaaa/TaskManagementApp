@@ -1,6 +1,6 @@
 {
   "version": "1",
-  "name": "TaskManagementApp",
+  "name": "TaskApp-APICollection",
   "type": "collection",
   "ignore": [
     "node_modules",

@@ -40,7 +40,7 @@ class ProjectModel {
 
   public async deleteProject(projectId: number): Promise<DbProject> {
     try {
-      return await this.db(this.tableName).delete("*").where("id", projectId);
+      return await this.db(this.tableName).where("id", projectId).delete();
     } catch (err) {
       console.log(err);
       throw err;

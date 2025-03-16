@@ -14,6 +14,10 @@ export const projectCreationValidation = [
   body("description").notEmpty().withMessage("Description is required"),
 ];
 
+export const taskCreationValidation = [
+  body("name").notEmpty().withMessage("Name is required"),
+];
+
 export const handlerErrorValidation = (
   req: Request,
   res: Response,

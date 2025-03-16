@@ -1,0 +1,17 @@
+meta {
+  name: Get a task
+  type: http
+  seq: 6
+}
+
+get {
+  url: {{baseUrl}}/task/1
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Write an essay"
+  }
+}

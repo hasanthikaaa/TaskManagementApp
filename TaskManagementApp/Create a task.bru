@@ -1,0 +1,17 @@
+meta {
+  name: Create a task
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{baseUrl}}/project/1/task
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "name": "Write an essay"
+  }
+}
