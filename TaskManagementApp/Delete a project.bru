@@ -1,0 +1,18 @@
+meta {
+  name: Delete a project
+  type: http
+  seq: 11
+}
+
+post {
+  url: {{baseUrl}}/task/5/comment
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "content": "Hi there!",
+    "userId": 1
+  }
+}

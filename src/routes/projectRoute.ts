@@ -20,4 +20,8 @@ router.get("/project/:id", async (req: Request, res: Response) => {
   await ProjectController.getAProject(req, res);
 });
 
+router.delete("/project/:id", async (req: Request, res: Response) => {
+  await ProjectController.deleteAProject(req, res);
+});
+
 export default router;
