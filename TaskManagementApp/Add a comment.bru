@@ -1,0 +1,18 @@
+meta {
+  name: Add a comment
+  type: http
+  seq: 10
+}
+
+post {
+  url: {{baseUrl}}/task/5/comment
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "content": "Hi there!",
+    "userId": 1
+  }
+}
