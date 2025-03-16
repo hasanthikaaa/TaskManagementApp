@@ -1,5 +1,5 @@
-import { Response, Request } from 'express';
-import ProjectService from '../services/projectService';
+import { Response, Request } from "express";
+import ProjectService from "../services/projectService";
 
 class ProjectController {
   public async createProject(req: Request, res: Response): Promise<Response> {
@@ -15,7 +15,7 @@ class ProjectController {
       );
       return res.status(200).json(project);
     } catch (err) {
-      return res.status(400).send('Error creating project');
+      return res.status(400).send("Error creating project");
     }
   }
 
@@ -27,7 +27,7 @@ class ProjectController {
       const project = await ProjectService.getAProject(Number(projectId));
       return res.status(200).json(project);
     } catch (err) {
-      return res.status(400).send('Error retrieving project');
+      return res.status(400).send("Error retrieving project");
     }
   }
 
@@ -37,9 +37,9 @@ class ProjectController {
       console.log({ projectId });
 
       await ProjectService.deleteAProject(Number(projectId));
-      return res.status(200).json('Deleted successfully');
+      return res.status(200).json({ data: "Deleted successfully" });
     } catch (err) {
-      return res.status(400).send('Error retrieving project');
+      return res.status(400).send("Error retrieving project");
     }
   }
 }
