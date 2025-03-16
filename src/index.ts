@@ -1,11 +1,14 @@
 import express from "express";
 import { config } from "dotenv";
-import { env } from "./config/env";
-
 config({ path: "./.env.development" });
 
+import userRoute from "./routes/userRoute";
+import bodyParser from "body-parser";
+
 const app = express();
-const port = env.port || 3000;
+const port = process.env.PORT || 3000;
+app.use(bodyParser.json());
+app.use(userRoute);
 
 app.listen(port, () => {
   console.log("Nodemon server listening on port", port);

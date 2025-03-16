@@ -80,11 +80,19 @@
       "type": "build"
     },
     {
+      "name": "body-parser",
+      "type": "runtime"
+    },
+    {
       "name": "dotenv",
       "type": "runtime"
     },
     {
       "name": "express",
+      "type": "runtime"
+    },
+    {
+      "name": "express-validator",
       "type": "runtime"
     },
     {

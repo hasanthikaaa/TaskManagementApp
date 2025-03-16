@@ -1,7 +1,8 @@
-import type { Knex } from "knex";
 import { config } from "dotenv";
+import { Knex } from "knex";
 
 config({ path: `.env.development` });
+
 const knexConfig: { [key: string]: Knex.Config } = {
   development: {
     client: "pg",
