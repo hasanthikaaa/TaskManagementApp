@@ -6,6 +6,10 @@
       "type": "build"
     },
     {
+      "name": "@types/express",
+      "type": "build"
+    },
+    {
       "name": "@types/jest",
       "type": "build"
     },
@@ -70,6 +74,10 @@
     {
       "name": "typescript",
       "type": "build"
+    },
+    {
+      "name": "dotenv",
+      "type": "runtime"
     },
     {
       "name": "express",

@@ -4,10 +4,11 @@ const project = new typescript.TypeScriptProject({
   defaultReleaseBranch: "main",
   name: "TaskManagementApp",
   projenrcTs: true,
-  deps: ["express", "nodemon", "prettier"],
+  deps: ["express", "nodemon", "prettier", "dotenv"],
   description: "Backend solution for TaskManagementApp",
-  devDeps: ["@types/node"],
+  devDeps: ["@types/node", "@types/express"],
   packageName: "TaskManagementApp",
+  gitignore: [".env.*"],
 });
 
 project.addTask("nodemon", {
