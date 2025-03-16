@@ -4,9 +4,9 @@ const project = new typescript.TypeScriptProject({
   defaultReleaseBranch: "main",
   name: "TaskManagementApp",
   projenrcTs: true,
-  deps: ["express", "nodemon", "prettier", "dotenv"],
+  deps: ["express", "nodemon", "prettier", "dotenv", "knex", "pg"],
   description: "Backend solution for TaskManagementApp",
-  devDeps: ["@types/node", "@types/express"],
+  devDeps: ["@types/node", "@types/express", "@types/knex"],
   packageName: "TaskManagementApp",
   gitignore: [".env.*"],
 });
@@ -14,6 +14,8 @@ const project = new typescript.TypeScriptProject({
 project.addTask("nodemon", {
   exec: "nodemon --watch src src/index.ts",
 });
+
+project.addFields({ type: "module" });
 
 new JsonFile(project, "nodemon.json", {
   obj: {
