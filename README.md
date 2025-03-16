@@ -22,7 +22,7 @@ Ensure you have the following installed:
     npm install
     ```
 
-3. **Bootstrap Projen** (if not already done)
+3. **Bootstrap Projen**
     ```bash
     npx projen
     ```
@@ -54,6 +54,46 @@ Ensure you have the following installed:
     npx projen test
     ```
 
+## Knex Migration and Seeding
+To run database migrations and seed your database, follow these steps:
+### 1. Run Migrations
+Run the Knex migrations to set up the database schema:
+```bash
+  npx knex migrate:latest
+```
+This will apply all the pending migrations in the migrations folder to your development database.
+
+### 2. Seed the database
+```bash
+   knex seed:run --specific=user.ts
+```
+```bash
+   knex seed:run --specific=project.ts
+```
+```bash
+   knex seed:run --specific=user_projects.ts
+```
+```bash
+   knex seed:run --specific=tasks.ts
+```
+```bash
+   knex seed:run --specific=comments.ts
+```
+
+## **Bruno API Client Testing**
+    
+After setting up the development environment, you can run API tests using the **Bruno API Client**.
+
+### 1. Import the Collection
+- Import the API collection from your repository into the Bruno API Client.
+- **Postman**: If you don't have Bruno, you can import the same collection into **Postman**
+- Navigate to the **Collections** section in Bruno and import the collection file (e.g., `my-api-collection.json`).
+
+### 2. Configure Environment Variables in Bruno
+- Set up the required environment variables in the Bruno **Environment** section:
+  ```env
+  baseUrl=http://localhost:3000
+
 ## Folder Structure
 ```plaintext
 ├── src
@@ -76,17 +116,3 @@ Ensure you have the following installed:
 ├── README.md            # Project documentation
 └── tsconfig.json        # TypeScript configuration
 ```
-
-8. **Bruno API Client Testing**
-    
-After setting up the development environment, you can run API tests using the **Bruno API Client**.
-
-### 1. Import the Collection
-- Import the API collection from your repository into the Bruno API Client.
-- **Postman**: If you don't have Bruno, you can import the same collection into **Postman**
-- Navigate to the **Collections** section in Bruno and import the collection file (e.g., `my-api-collection.json`).
-
-### 2. Configure Environment Variables in Bruno
-- Set up the required environment variables in the Bruno **Environment** section:
-  ```env
-  baseUrl=http://localhost:3000
