@@ -1,14 +1,14 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response } from 'express';
+import TaskController from '../controllers/taskController';
 import {
   handlerErrorValidation,
   taskCreationValidation,
-} from "../middlewares/validations";
-import TaskController from "../controllers/taskController";
+} from '../middlewares/validations';
 
 const router = express.Router();
 
 router.post(
-  "/project/:projectId/task",
+  '/project/:projectId/task',
   [...taskCreationValidation],
   handlerErrorValidation,
   async (req: Request, res: Response) => {
@@ -16,19 +16,19 @@ router.post(
   },
 );
 
-router.get("/task/:id", async (req: Request, res: Response) => {
+router.get('/task/:id', async (req: Request, res: Response) => {
   await TaskController.getATask(req, res);
 });
 
-router.get("/project/:projectId/tasks", async (req: Request, res: Response) => {
+router.get('/project/:projectId/tasks', async (req: Request, res: Response) => {
   await TaskController.getProjectTasks(req, res);
 });
 
-router.delete("/task/:id", async (req: Request, res: Response) => {
+router.delete('/task/:id', async (req: Request, res: Response) => {
   await TaskController.deleteTask(req, res);
 });
 
-router.patch("/task/:id", async (req: Request, res: Response) => {
+router.patch('/task/:id', async (req: Request, res: Response) => {
   await TaskController.updateTask(req, res);
 });
 

@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import CommentService from "../services/commentService";
+import { Request, Response } from 'express';
+import CommentService from '../services/commentService';
 
 class CommentController {
   public async newComment(req: Request, res: Response): Promise<Response> {
@@ -12,7 +12,7 @@ class CommentController {
       const result = await CommentService.newComment(input);
       return res.status(200).json(result);
     } catch (err) {
-      return res.status(400).send("Error creating comment");
+      return res.status(400).send('Error creating comment');
     }
   }
 }

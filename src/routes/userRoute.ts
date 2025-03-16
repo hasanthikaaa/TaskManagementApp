@@ -1,14 +1,14 @@
-import express, { Request, Response } from "express";
-import UserController from "../controllers/userController";
+import express, { Request, Response } from 'express';
+import UserController from '../controllers/userController';
 import {
   handlerErrorValidation,
   userCreationValidation,
-} from "../middlewares/validations";
+} from '../middlewares/validations';
 
 const router = express.Router();
 
 router.post(
-  "/user",
+  '/user',
   [...userCreationValidation],
   handlerErrorValidation,
   async (req: Request, res: Response) => {

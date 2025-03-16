@@ -1,14 +1,14 @@
-import express, { Request, Response } from "express";
+import express, { Request, Response } from 'express';
+import ProjectController from '../controllers/projectController';
 import {
   handlerErrorValidation,
   projectCreationValidation,
-} from "../middlewares/validations";
-import ProjectController from "../controllers/projectController";
+} from '../middlewares/validations';
 
 const router = express.Router();
 
 router.post(
-  "/project/:userId",
+  '/project/:userId',
   [...projectCreationValidation],
   handlerErrorValidation,
   async (req: Request, res: Response) => {
@@ -16,11 +16,11 @@ router.post(
   },
 );
 
-router.get("/project/:id", async (req: Request, res: Response) => {
+router.get('/project/:id', async (req: Request, res: Response) => {
   await ProjectController.getAProject(req, res);
 });
 
-router.delete("/project/:id", async (req: Request, res: Response) => {
+router.delete('/project/:id', async (req: Request, res: Response) => {
   await ProjectController.deleteAProject(req, res);
 });
 

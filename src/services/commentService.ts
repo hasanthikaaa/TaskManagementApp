@@ -1,7 +1,7 @@
 import CommentModel, {
   Comment,
   DbComment,
-} from "../models/tables/CommentModel";
+} from '../models/tables/CommentModel';
 
 class CommentService {
   public async newComment(comment: Comment): Promise<DbComment> {

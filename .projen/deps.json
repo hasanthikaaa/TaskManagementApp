@@ -96,6 +96,10 @@
       "type": "runtime"
     },
     {
+      "name": "husky",
+      "type": "runtime"
+    },
+    {
       "name": "knex",
       "type": "runtime"
     },

@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import TaskService from "../services/taskService";
+import { Request, Response } from 'express';
+import TaskService from '../services/taskService';
 
 class TaskController {
   public async createTask(req: Request, res: Response): Promise<Response> {
@@ -11,7 +11,7 @@ class TaskController {
       const result = await TaskService.createTask(input);
       return res.status(200).json(result);
     } catch (err) {
-      return res.status(400).send("Error creating task");
+      return res.status(400).send('Error creating task');
     }
   }
 
@@ -21,7 +21,7 @@ class TaskController {
       const result = await TaskService.getATask(taskId);
       return res.status(200).json(result);
     } catch (err) {
-      return res.status(400).send("Error retrieving task");
+      return res.status(400).send('Error retrieving task');
     }
   }
 
@@ -31,7 +31,7 @@ class TaskController {
       const result = await TaskService.getProjectTasks(projectId);
       return res.status(200).json(result);
     } catch (err) {
-      return res.status(400).send("Error retrieving project tasks");
+      return res.status(400).send('Error retrieving project tasks');
     }
   }
 
@@ -43,7 +43,7 @@ class TaskController {
       const result = await TaskService.updateTask(taskId, userId, status);
       return res.status(200).json(result);
     } catch (err) {
-      return res.status(400).send("Error updating tasks");
+      return res.status(400).send('Error updating tasks');
     }
   }
 
@@ -51,9 +51,9 @@ class TaskController {
     try {
       const taskId = Number(req?.params?.id) || 0;
       await TaskService.deleteTask(taskId);
-      return res.status(200).json({ data: "Task Deleted Successfully" });
+      return res.status(200).json({ data: 'Task Deleted Successfully' });
     } catch (err) {
-      return res.status(400).send("Error deleting tasks");
+      return res.status(400).send('Error deleting tasks');
     }
   }
 }

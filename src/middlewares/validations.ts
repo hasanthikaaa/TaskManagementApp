@@ -1,21 +1,21 @@
-import { body, validationResult } from "express-validator";
-import { NextFunction, Request, Response } from "express";
+import { NextFunction, Request, Response } from 'express';
+import { body, validationResult } from 'express-validator';
 
 export const userCreationValidation = [
-  body("name").notEmpty().withMessage("Name is required"),
-  body("email")
+  body('name').notEmpty().withMessage('Name is required'),
+  body('email')
     .notEmpty()
     .isEmail()
-    .withMessage("Email is required and should be valid"),
+    .withMessage('Email is required and should be valid'),
 ];
 
 export const projectCreationValidation = [
-  body("name").notEmpty().withMessage("Name is required"),
-  body("description").notEmpty().withMessage("Description is required"),
+  body('name').notEmpty().withMessage('Name is required'),
+  body('description').notEmpty().withMessage('Description is required'),
 ];
 
 export const taskCreationValidation = [
-  body("name").notEmpty().withMessage("Name is required"),
+  body('name').notEmpty().withMessage('Name is required'),
 ];
 
 export const handlerErrorValidation = (

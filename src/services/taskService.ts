@@ -1,14 +1,14 @@
-import TaskModel, { DbTask, Task } from "../models/tables/TaskModel";
-import ProjectService from "./projectService";
+import ProjectService from './projectService';
+import TaskModel, { DbTask, Task } from '../models/tables/TaskModel';
 class TaskService {
   public async createTask(input: Task): Promise<DbTask[]> {
     try {
       const project = await ProjectService.getAProject(input.projectId);
-      console.log("project", project);
+      console.log('project', project);
       if (project) {
         return await TaskModel.insertNewTask(input);
       } else {
-        throw "Project not found.";
+        throw 'Project not found.';
       }
     } catch (err) {
       throw err;

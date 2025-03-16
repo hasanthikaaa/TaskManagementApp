@@ -1,12 +1,12 @@
-import express from "express";
-import { config } from "dotenv";
-config({ path: "./.env.development" });
+import bodyParser from 'body-parser';
+import { config } from 'dotenv';
+import express from 'express';
 
-import userRoute from "./routes/userRoute";
-import bodyParser from "body-parser";
-import projectRoute from "./routes/projectRoute";
-import taskRoute from "./routes/taskRoute";
-import commentRoute from "./routes/commentRoute";
+import commentRoute from './routes/commentRoute';
+import projectRoute from './routes/projectRoute';
+import taskRoute from './routes/taskRoute';
+import userRoute from './routes/userRoute';
+config({ path: './.env.development' });
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -19,5 +19,5 @@ app.use(taskRoute);
 app.use(commentRoute);
 
 app.listen(port, () => {
-  console.log("Nodemon server listening on port", port);
+  console.log('Nodemon server listening on port', port);
 });

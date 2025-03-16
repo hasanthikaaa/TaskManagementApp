@@ -1,9 +1,9 @@
+import TaskService from './taskService';
 import ProjectModel, {
   DbProject,
   Project,
-} from "../models/tables/ProjectModel";
-import UserProjects from "../models/tables/UserProjects";
-import TaskService from "./taskService";
+} from '../models/tables/ProjectModel';
+import UserProjects from '../models/tables/UserProjects';
 
 class ProjectService {
   public async createNewProject(

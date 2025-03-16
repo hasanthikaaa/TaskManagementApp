@@ -1,4 +1,4 @@
-import UserModel, { DbUser, User } from "../models/tables/UserModel";
+import UserModel, { DbUser, User } from '../models/tables/UserModel';
 
 class UserService {
   public async newUser(user: User): Promise<DbUser> {

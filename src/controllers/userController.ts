@@ -1,5 +1,5 @@
-import { Request, Response } from "express";
-import UserService from "../services/userService";
+import { Request, Response } from 'express';
+import UserService from '../services/userService';
 
 class UserController {
   public async newUser(req: Request, res: Response): Promise<Response> {
@@ -11,7 +11,7 @@ class UserController {
       const result = await UserService.newUser(input);
       return res.status(200).json(result);
     } catch (err) {
-      return res.status(400).send("Error creating user");
+      return res.status(400).send('Error creating user');
     }
   }
 }

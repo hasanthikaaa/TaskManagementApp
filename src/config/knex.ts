@@ -1,10 +1,10 @@
-import knex from "knex";
-import { config } from "dotenv";
+import { config } from 'dotenv';
+import knex from 'knex';
 
-config({ path: `.env.development` });
+config({ path: '.env.development' });
 
 export const dbConfig = knex({
-  client: "pg",
+  client: 'pg',
   connection: {
     port: Number(process.env.DB_PORT),
     host: process.env.DB_HOST,
